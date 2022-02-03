@@ -1,0 +1,594 @@
+EESchema Schematic File Version 4
+LIBS:RT12_TSAL_00-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 5
+Title "RT12e TSAL"
+Date "2020-07-09"
+Rev "00"
+Comp "PWR Racing Team"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 5F1B3E3B
+P 2100 3200
+F 0 "J2" H 2018 3417 50  0000 C CNN
+F 1 "AIR1" H 2018 3326 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical" H 2100 3200 50  0001 C CNN
+F 3 "~" H 2100 3200 50  0001 C CNN
+	1    2100 3200
+	-1   0    0    -1  
+$EndComp
+Text Notes 2350 3300 0    39   ~ 0
+AIR1- (signal)\n
+Text Notes 2350 3200 0    39   ~ 0
+AIR1+
+Text Notes 2350 3900 0    39   ~ 0
+AIR2- (signal)\n\n
+Text Notes 2350 3750 0    39   ~ 0
+AIR2+
+$Comp
+L Connector_Generic:Conn_01x02 J4
+U 1 1 5F2E8998
+P 2100 4250
+F 0 "J4" H 2018 4467 50  0000 C CNN
+F 1 "AIR_PRE" H 2018 4376 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical" H 2100 4250 50  0001 C CNN
+F 3 "~" H 2100 4250 50  0001 C CNN
+	1    2100 4250
+	-1   0    0    -1  
+$EndComp
+Text Notes 2300 4400 0    39   ~ 0
+AIR_PRE - (signal)\n\n
+Text Notes 2300 4250 0    39   ~ 0
+AIR_PRE+
+$Comp
+L Connector_Generic:Conn_01x02 J5
+U 1 1 5F2B574C
+P 950 4850
+F 0 "J5" H 868 5067 50  0000 C CNN
+F 1 "BATT_n_INV" H 868 4976 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical" H 950 4850 50  0001 C CNN
+F 3 "~" H 950 4850 50  0001 C CNN
+	1    950  4850
+	-1   0    0    -1  
+$EndComp
+Text Notes 1200 5000 0    39   ~ 0
+ANALOG_INV\n\n
+Text Notes 1200 4850 0    39   ~ 0
+ANALOG_BATT\n
+Wire Wire Line
+	2300 3750 2850 3750
+Wire Wire Line
+	2300 3200 2850 3200
+Wire Wire Line
+	2300 4250 2850 4250
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5F2EF7A8
+P 5150 2400
+F 0 "J1" H 5068 2617 50  0000 C CNN
+F 1 "LVS" H 5068 2526 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical" H 5150 2400 50  0001 C CNN
+F 3 "~" H 5150 2400 50  0001 C CNN
+	1    5150 2400
+	-1   0    0    -1  
+$EndComp
+$Sheet
+S 1900 4600 1350 800 
+U 5F2FE7B7
+F0 "Implausiility Detection" 50
+F1 "Implausiility Detection.sch" 50
+F2 "U_BATT" O R 3250 4850 50 
+F3 "ANALOG_BATT" I L 1900 4850 50 
+F4 "ANALOG_INV" I L 1900 4950 50 
+F5 "U_INV" O R 3250 4950 50 
+F6 "TS_ERROR" O R 3250 5300 50 
+F7 "U_ref" I L 1900 5050 50 
+$EndSheet
+Wire Wire Line
+	1150 4850 1900 4850
+Wire Wire Line
+	1150 4950 1900 4950
+Text Notes 900  6950 0    50   ~ 0
+400V = 5V\n60V = 0.75V\n
+$Sheet
+S 900  5900 500  750 
+U 5F48AB2C
+F0 "V_ref" 50
+F1 "V_ref.sch" 50
+F2 "V_ref" O R 1400 6150 50 
+$EndSheet
+Wire Wire Line
+	1400 6150 1600 6150
+Wire Wire Line
+	1600 6150 1600 5050
+Wire Wire Line
+	1600 5050 1900 5050
+$Comp
+L Connector_Generic:Conn_01x04 J6
+U 1 1 5F5A3C37
+P 10900 3850
+F 0 "J6" H 10850 4200 50  0000 L CNN
+F 1 "INDICATOR_LED" H 10700 4100 50  0000 L CNN
+F 2 "Connector_Molex:Molex_SPOX_5267-04A_1x04_P2.50mm_Vertical" H 10900 3850 50  0001 C CNN
+F 3 "~" H 10900 3850 50  0001 C CNN
+	1    10900 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 3750 10700 3750
+$Sheet
+S 9600 3450 550  800 
+U 5F3650DB
+F0 "LEDS" 50
+F1 "LEDS.sch" 50
+F2 "GREEN" I L 9600 4150 50 
+F3 "RED" I L 9600 3550 50 
+F4 "RED+" O R 10150 3750 50 
+F5 "GRN+" O R 10150 3850 50 
+$EndSheet
+Wire Wire Line
+	10700 3850 10150 3850
+Wire Wire Line
+	10700 3950 10550 3950
+Wire Wire Line
+	10550 3950 10550 4050
+Wire Wire Line
+	10700 4050 10550 4050
+Connection ~ 10550 4050
+Wire Wire Line
+	10550 4050 10550 4200
+$Comp
+L power:+12V #PWR0102
+U 1 1 5F5B1BBB
+P 2850 3050
+F 0 "#PWR0102" H 2850 2900 50  0001 C CNN
+F 1 "+12V" H 2865 3223 50  0000 C CNN
+F 2 "" H 2850 3050 50  0001 C CNN
+F 3 "" H 2850 3050 50  0001 C CNN
+	1    2850 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0103
+U 1 1 5F5B292F
+P 2850 3600
+F 0 "#PWR0103" H 2850 3450 50  0001 C CNN
+F 1 "+12V" H 2865 3773 50  0000 C CNN
+F 2 "" H 2850 3600 50  0001 C CNN
+F 3 "" H 2850 3600 50  0001 C CNN
+	1    2850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR0104
+U 1 1 5F5B3CD0
+P 2850 4100
+F 0 "#PWR0104" H 2850 3950 50  0001 C CNN
+F 1 "+12V" H 2865 4273 50  0000 C CNN
+F 2 "" H 2850 4100 50  0001 C CNN
+F 3 "" H 2850 4100 50  0001 C CNN
+	1    2850 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 3200 2850 3050
+Wire Wire Line
+	2850 3750 2850 3600
+Wire Wire Line
+	2850 4250 2850 4100
+$Comp
+L power:+12V #PWR0105
+U 1 1 5F308E19
+P 7050 2100
+F 0 "#PWR0105" H 7050 1950 50  0001 C CNN
+F 1 "+12V" H 7065 2273 50  0000 C CNN
+F 2 "" H 7050 2100 50  0001 C CNN
+F 3 "" H 7050 2100 50  0001 C CNN
+	1    7050 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 2400 7050 2100
+Wire Wire Line
+	5350 2500 5600 2500
+Wire Wire Line
+	5600 2500 5600 2650
+Wire Wire Line
+	6900 2400 7050 2400
+$Comp
+L power:+5V #PWR0110
+U 1 1 5F3BDCBE
+P 7300 2100
+F 0 "#PWR0110" H 7300 1950 50  0001 C CNN
+F 1 "+5V" H 7315 2273 50  0000 C CNN
+F 2 "" H 7300 2100 50  0001 C CNN
+F 3 "" H 7300 2100 50  0001 C CNN
+	1    7300 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 2100 7300 2550
+Wire Wire Line
+	6900 2550 7300 2550
+Wire Wire Line
+	5350 2400 5950 2400
+Wire Wire Line
+	2300 3300 3350 3300
+Wire Wire Line
+	2300 3850 3800 3850
+Wire Wire Line
+	3350 3750 3800 3750
+Wire Wire Line
+	3350 3300 3350 3750
+Wire Wire Line
+	2300 4350 3350 4350
+Wire Wire Line
+	3350 4350 3350 3950
+Wire Wire Line
+	3350 3950 3800 3950
+Wire Wire Line
+	3650 4150 3650 4300
+Wire Wire Line
+	3800 4150 3650 4150
+$Comp
+L power:+5V #PWR0118
+U 1 1 5F4175F1
+P 4950 3400
+F 0 "#PWR0118" H 4950 3250 50  0001 C CNN
+F 1 "+5V" H 4965 3573 50  0000 C CNN
+F 2 "" H 4950 3400 50  0001 C CNN
+F 3 "" H 4950 3400 50  0001 C CNN
+	1    4950 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 3550 4950 3550
+Wire Wire Line
+	4950 3550 4950 3400
+Wire Wire Line
+	3800 4050 3500 4050
+Wire Wire Line
+	5050 4850 5050 3750
+Wire Wire Line
+	5050 3750 4800 3750
+Wire Wire Line
+	3250 4850 5050 4850
+Wire Wire Line
+	5150 4950 5150 3650
+Wire Wire Line
+	5150 3650 4800 3650
+Wire Wire Line
+	3250 4950 5150 4950
+Wire Wire Line
+	4950 4750 3500 4750
+Wire Wire Line
+	3500 4050 3500 4750
+NoConn ~ 3800 3550
+NoConn ~ 3800 3650
+Wire Wire Line
+	4950 3850 4800 3850
+Wire Wire Line
+	4950 3850 4950 4750
+Wire Wire Line
+	4800 3950 5550 3950
+NoConn ~ 4800 4150
+NoConn ~ 4800 4050
+Wire Wire Line
+	5550 4250 5550 3950
+Wire Wire Line
+	4800 5300 3250 5300
+Wire Wire Line
+	4650 5400 4650 5550
+Wire Wire Line
+	4800 5400 4650 5400
+NoConn ~ 4800 5200
+Wire Wire Line
+	5900 5200 6000 5200
+Wire Wire Line
+	6000 4350 6100 4350
+Wire Wire Line
+	5550 4250 6100 4250
+Wire Wire Line
+	5900 5300 6150 5300
+Wire Wire Line
+	6150 5300 6150 5200
+$Comp
+L power:+5V #PWR0120
+U 1 1 5F4BA217
+P 6150 5200
+F 0 "#PWR0120" H 6150 5050 50  0001 C CNN
+F 1 "+5V" H 6165 5373 50  0000 C CNN
+F 2 "" H 6150 5200 50  0001 C CNN
+F 3 "" H 6150 5200 50  0001 C CNN
+	1    6150 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4450 6100 4600
+Wire Wire Line
+	7100 4250 7350 4250
+Wire Wire Line
+	7350 4250 7350 3550
+Wire Wire Line
+	7350 3550 7600 3550
+Wire Wire Line
+	7100 4350 7450 4350
+Wire Wire Line
+	7450 4350 7450 4100
+Wire Wire Line
+	7700 4600 7600 4600
+Wire Wire Line
+	7600 4600 7600 3550
+Connection ~ 7600 3550
+Wire Wire Line
+	7600 3550 9600 3550
+Wire Wire Line
+	9350 5300 9500 5300
+Wire Wire Line
+	9500 5300 9500 4150
+Wire Wire Line
+	9500 4150 9600 4150
+Wire Wire Line
+	9350 5400 9600 5400
+Wire Wire Line
+	9600 5400 9600 5100
+Wire Wire Line
+	8800 4500 8950 4500
+Wire Wire Line
+	8950 4500 8950 4950
+Wire Wire Line
+	8950 4950 8350 4950
+Wire Wire Line
+	8350 4950 8350 5300
+Wire Wire Line
+	8250 5400 8350 5400
+Wire Wire Line
+	7700 4700 7700 4850
+Wire Wire Line
+	6000 4350 6000 4900
+Wire Wire Line
+	8250 5400 8250 5100
+Wire Wire Line
+	8250 5100 6300 5100
+Wire Wire Line
+	6300 5100 6300 4900
+Wire Wire Line
+	6300 4900 6000 4900
+Connection ~ 6000 4900
+Wire Wire Line
+	6000 4900 6000 5200
+$Comp
+L power:+5V #PWR0123
+U 1 1 5F51CFD5
+P 7450 4100
+F 0 "#PWR0123" H 7450 3950 50  0001 C CNN
+F 1 "+5V" H 7465 4273 50  0000 C CNN
+F 2 "" H 7450 4100 50  0001 C CNN
+F 3 "" H 7450 4100 50  0001 C CNN
+	1    7450 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0124
+U 1 1 5F521AD8
+P 8850 4300
+F 0 "#PWR0124" H 8850 4150 50  0001 C CNN
+F 1 "+5V" H 8865 4473 50  0000 C CNN
+F 2 "" H 8850 4300 50  0001 C CNN
+F 3 "" H 8850 4300 50  0001 C CNN
+	1    8850 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0125
+U 1 1 5F52B526
+P 9600 5100
+F 0 "#PWR0125" H 9600 4950 50  0001 C CNN
+F 1 "+5V" H 9615 5273 50  0000 C CNN
+F 2 "" H 9600 5100 50  0001 C CNN
+F 3 "" H 9600 5100 50  0001 C CNN
+	1    9600 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 5500 8250 5500
+Wire Wire Line
+	8250 5500 8250 5650
+NoConn ~ 7700 4500
+$Comp
+L SamacSys_Parts:CD4075BEE4 IC1
+U 1 1 5F5A1318
+P 3800 3550
+F 0 "IC1" H 4300 3815 50  0000 C CNN
+F 1 "CD4075BEE4_OR" H 4300 3724 50  0000 C CNN
+F 2 "DIP794W53P254L1930H508Q14N" H 4650 3650 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/cd4075b.pdf" H 4650 3550 50  0001 L CNN
+F 4 "OR Gate 3-Element 3-IN" H 4650 3450 50  0001 L CNN "Description"
+F 5 "5.08" H 4650 3350 50  0001 L CNN "Height"
+F 6 "595-CD4075BEE4" H 4650 3250 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/CD4075BEE4?qs=HTr%252BoA4jRikfAyLUjiiM3g%3D%3D" H 4650 3150 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Texas Instruments" H 4650 3050 50  0001 L CNN "Manufacturer_Name"
+F 9 "CD4075BEE4" H 4650 2950 50  0001 L CNN "Manufacturer_Part_Number"
+	1    3800 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L SamacSys_Parts:74LV1T08GVH IC3
+U 1 1 5F5A820C
+P 6100 4250
+F 0 "IC3" H 6600 4515 50  0000 C CNN
+F 1 "74LV1T08GVH_AND" H 6600 4424 50  0000 C CNN
+F 2 "SOT95P275X110-5N" H 6950 4350 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/74LV1T08GVH.pdf" H 6950 4250 50  0001 L CNN
+F 4 "Logic Gates LOGIC GATES" H 6950 4150 50  0001 L CNN "Description"
+F 5 "1.1" H 6950 4050 50  0001 L CNN "Height"
+F 6 "771-74LV1T08GVH" H 6950 3950 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Nexperia/74LV1T08GVH?qs=Cb2nCFKsA8oPdf%252B%2F5lFFiw%3D%3D" H 6950 3850 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Nexperia" H 6950 3750 50  0001 L CNN "Manufacturer_Name"
+F 9 "74LV1T08GVH" H 6950 3650 50  0001 L CNN "Manufacturer_Part_Number"
+	1    6100 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L SamacSys_Parts:74LV1T08GVH IC5
+U 1 1 5F5AE152
+P 8350 5300
+F 0 "IC5" H 8850 5565 50  0000 C CNN
+F 1 "74LV1T08GVH_AND" H 8850 5474 50  0000 C CNN
+F 2 "SOT95P275X110-5N" H 9200 5400 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/74LV1T08GVH.pdf" H 9200 5300 50  0001 L CNN
+F 4 "Logic Gates LOGIC GATES" H 9200 5200 50  0001 L CNN "Description"
+F 5 "1.1" H 9200 5100 50  0001 L CNN "Height"
+F 6 "771-74LV1T08GVH" H 9200 5000 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Nexperia/74LV1T08GVH?qs=Cb2nCFKsA8oPdf%252B%2F5lFFiw%3D%3D" H 9200 4900 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Nexperia" H 9200 4800 50  0001 L CNN "Manufacturer_Name"
+F 9 "74LV1T08GVH" H 9200 4700 50  0001 L CNN "Manufacturer_Part_Number"
+	1    8350 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L SamacSys_Parts:74HC1G04GV-Q100H IC2
+U 1 1 5F5B8D05
+P 4800 5200
+F 0 "IC2" H 5350 5465 50  0000 C CNN
+F 1 "74HC1G04GV-Q100H_INV" H 5350 5374 50  0000 C CNN
+F 2 "SOT95P275X110-5N" H 5750 5300 50  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT1G04_Q100.pdf" H 5750 5200 50  0001 L CNN
+F 4 "74HC(T)1G04-Q100 - Inverter@en-us" H 5750 5100 50  0001 L CNN "Description"
+F 5 "1.1" H 5750 5000 50  0001 L CNN "Height"
+F 6 "771-74HC1G04GV-Q100H" H 5750 4900 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Nexperia/74HC1G04GV-Q100H?qs=cbprxTG2Yq%252BKFNu%252BdT2Rfw%3D%3D" H 5750 4800 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Nexperia" H 5750 4700 50  0001 L CNN "Manufacturer_Name"
+F 9 "74HC1G04GV-Q100H" H 5750 4600 50  0001 L CNN "Manufacturer_Part_Number"
+	1    4800 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L SamacSys_Parts:74HC1G04GV-Q100H IC4
+U 1 1 5F5C4493
+P 7700 4500
+F 0 "IC4" H 8250 4765 50  0000 C CNN
+F 1 "74HC1G04GV-Q100H_INV" H 8250 4674 50  0000 C CNN
+F 2 "SOT95P275X110-5N" H 8650 4600 50  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74HC_HCT1G04_Q100.pdf" H 8650 4500 50  0001 L CNN
+F 4 "74HC(T)1G04-Q100 - Inverter@en-us" H 8650 4400 50  0001 L CNN "Description"
+F 5 "1.1" H 8650 4300 50  0001 L CNN "Height"
+F 6 "771-74HC1G04GV-Q100H" H 8650 4200 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Nexperia/74HC1G04GV-Q100H?qs=cbprxTG2Yq%252BKFNu%252BdT2Rfw%3D%3D" H 8650 4100 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Nexperia" H 8650 4000 50  0001 L CNN "Manufacturer_Name"
+F 9 "74HC1G04GV-Q100H" H 8650 3900 50  0001 L CNN "Manufacturer_Part_Number"
+	1    7700 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 4600 8850 4600
+Wire Wire Line
+	8850 4600 8850 4300
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5F2E6C17
+P 2100 3750
+F 0 "J3" H 2018 3967 50  0000 C CNN
+F 1 "AIR2" H 2018 3876 50  0000 C CNN
+F 2 "Connector_Molex:Molex_PicoBlade_53047-0210_1x02_P1.25mm_Vertical" H 2100 3750 50  0001 C CNN
+F 3 "~" H 2100 3750 50  0001 C CNN
+	1    2100 3750
+	-1   0    0    -1  
+$EndComp
+Text Notes 9800 6000 0    50   ~ 0
+TODO:\n- pobór prądu na schemacie\n
+$Comp
+L power:GND #PWR0111
+U 1 1 5F4094B9
+P 3650 4300
+F 0 "#PWR0111" H 3650 4050 50  0001 C CNN
+F 1 "GND" H 3655 4127 50  0000 C CNN
+F 2 "" H 3650 4300 50  0001 C CNN
+F 3 "" H 3650 4300 50  0001 C CNN
+	1    3650 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 5F512FCE
+P 7700 4850
+F 0 "#PWR0122" H 7700 4600 50  0001 C CNN
+F 1 "GND" H 7705 4677 50  0000 C CNN
+F 2 "" H 7700 4850 50  0001 C CNN
+F 3 "" H 7700 4850 50  0001 C CNN
+	1    7700 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5F4BEEBF
+P 6100 4600
+F 0 "#PWR0121" H 6100 4350 50  0001 C CNN
+F 1 "GND" H 6105 4427 50  0000 C CNN
+F 2 "" H 6100 4600 50  0001 C CNN
+F 3 "" H 6100 4600 50  0001 C CNN
+	1    6100 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5F4A1C81
+P 4650 5550
+F 0 "#PWR0119" H 4650 5300 50  0001 C CNN
+F 1 "GND" H 4655 5377 50  0000 C CNN
+F 2 "" H 4650 5550 50  0001 C CNN
+F 3 "" H 4650 5550 50  0001 C CNN
+	1    4650 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0126
+U 1 1 5F530412
+P 8250 5650
+F 0 "#PWR0126" H 8250 5400 50  0001 C CNN
+F 1 "GND" H 8255 5477 50  0000 C CNN
+F 2 "" H 8250 5650 50  0001 C CNN
+F 3 "" H 8250 5650 50  0001 C CNN
+	1    8250 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5F5AF62B
+P 10550 4200
+F 0 "#PWR0101" H 10550 3950 50  0001 C CNN
+F 1 "GND" H 10555 4027 50  0000 C CNN
+F 2 "" H 10550 4200 50  0001 C CNN
+F 3 "" H 10550 4200 50  0001 C CNN
+	1    10550 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5F3B3D25
+P 5600 2650
+F 0 "#PWR0109" H 5600 2400 50  0001 C CNN
+F 1 "GND" H 5605 2477 50  0000 C CNN
+F 2 "" H 5600 2650 50  0001 C CNN
+F 3 "" H 5600 2650 50  0001 C CNN
+	1    5600 2650
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 5950 2300 950  350 
+U 5F3B0999
+F0 "POWER_SUPPLY" 50
+F1 "POWER_SUPPLY.sch" 50
+F2 "VIN" I L 5950 2400 50 
+F3 "VOUT_12V" O R 6900 2400 50 
+F4 "VOUT_5V" O R 6900 2550 50 
+$EndSheet
+$EndSCHEMATC

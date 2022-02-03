@@ -1,0 +1,412 @@
+EESchema Schematic File Version 4
+LIBS:ASSI_N_R2DS-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 8
+Title "ASSI+R2DS"
+Date "2020-11-20"
+Rev "00"
+Comp "PWR Racing Team"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 7600 1350 0    50   ~ 0
+5m ledów o zagęszczeniu 60led/m = 8.2 A \n1m = 1,64 A\n48 cm = 0,7872 A\n\n\n
+Text Notes 4800 1550 0    50   ~ 10
+MPU -  5mA 3V3\nCAN - 60 mA 5V\nCAN - 1mA 3V3\nLEDS - 787,2mA 5V\n\n5V - 864,3 mA\n3V3 - 5mA
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5FB15290
+P 10150 3150
+AR Path="/5FB15290" Ref="#PWR?"  Part="1" 
+AR Path="/5FAC4E12/5FB15290" Ref="#PWR034"  Part="1" 
+F 0 "#PWR034" H 10150 3000 50  0001 C CNN
+F 1 "+3V3" H 10165 3323 50  0000 C CNN
+F 2 "" H 10150 3150 50  0001 C CNN
+F 3 "" H 10150 3150 50  0001 C CNN
+	1    10150 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR032
+U 1 1 5FB155D9
+P 9750 3150
+F 0 "#PWR032" H 9750 3000 50  0001 C CNN
+F 1 "+5V" H 9765 3323 50  0000 C CNN
+F 2 "" H 9750 3150 50  0001 C CNN
+F 3 "" H 9750 3150 50  0001 C CNN
+	1    9750 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R8
+U 1 1 5FB16051
+P 9750 3400
+F 0 "R8" H 9820 3446 50  0000 L CNN
+F 1 "1k" H 9820 3355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 9680 3400 50  0001 C CNN
+F 3 "~" H 9750 3400 50  0001 C CNN
+	1    9750 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 5FB173CF
+P 10150 3400
+F 0 "R9" H 10220 3446 50  0000 L CNN
+F 1 "1k" H 10220 3355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 10080 3400 50  0001 C CNN
+F 3 "~" H 10150 3400 50  0001 C CNN
+	1    10150 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9750 3250 9750 3150
+Wire Wire Line
+	10150 3250 10150 3150
+$Comp
+L Device:LED D2
+U 1 1 5FB186C3
+P 9750 3850
+F 0 "D2" V 9789 3733 50  0000 R CNN
+F 1 "LED" V 9698 3733 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 9750 3850 50  0001 C CNN
+F 3 "~" H 9750 3850 50  0001 C CNN
+	1    9750 3850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 5FB19F14
+P 10150 3850
+F 0 "D3" V 10189 3733 50  0000 R CNN
+F 1 "LED" V 10098 3733 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 10150 3850 50  0001 C CNN
+F 3 "~" H 10150 3850 50  0001 C CNN
+	1    10150 3850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10150 3700 10150 3550
+$Comp
+L power:GND #PWR033
+U 1 1 5FB1A703
+P 9750 4100
+F 0 "#PWR033" H 9750 3850 50  0001 C CNN
+F 1 "GND" H 9755 3927 50  0000 C CNN
+F 2 "" H 9750 4100 50  0001 C CNN
+F 3 "" H 9750 4100 50  0001 C CNN
+	1    9750 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR035
+U 1 1 5FB1B4B4
+P 10150 4100
+F 0 "#PWR035" H 10150 3850 50  0001 C CNN
+F 1 "GND" H 10155 3927 50  0000 C CNN
+F 2 "" H 10150 4100 50  0001 C CNN
+F 3 "" H 10150 4100 50  0001 C CNN
+	1    10150 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 4100 10150 4000
+Wire Wire Line
+	9750 4100 9750 4000
+Text HLabel 2400 3500 0    50   Input ~ 0
+VIN
+$Comp
+L SamacSys_Parts:TPS62160QDSGRQ1 IC2
+U 1 1 5FB4C175
+P 3400 3400
+F 0 "IC2" H 4000 3665 50  0000 C CNN
+F 1 "TPS62160QDSGRQ1" H 4000 3574 50  0000 C CNN
+F 2 "SON50P200X200X80-9N" H 4450 3500 50  0001 L CNN
+F 3 "http://www.ti.com/lit/gpn/tps62160-q1" H 4450 3400 50  0001 L CNN
+F 4 "3V-17V 1A Automotive Step-Down Converters in 2x2SON" H 4450 3300 50  0001 L CNN "Description"
+F 5 "0.8" H 4450 3200 50  0001 L CNN "Height"
+F 6 "595-TPS62160QDSGRQ1" H 4450 3100 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TPS62160QDSGRQ1?qs=7z%252BmIopC6%2FJcaztvQ5d0cw%3D%3D" H 4450 3000 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Texas Instruments" H 4450 2900 50  0001 L CNN "Manufacturer_Name"
+F 9 "TPS62160QDSGRQ1" H 4450 2800 50  0001 L CNN "Manufacturer_Part_Number"
+	1    3400 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR028
+U 1 1 5FB549BB
+P 2800 4300
+F 0 "#PWR028" H 2800 4050 50  0001 C CNN
+F 1 "GND" H 2805 4127 50  0000 C CNN
+F 2 "" H 2800 4300 50  0001 C CNN
+F 3 "" H 2800 4300 50  0001 C CNN
+	1    2800 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3500 2800 3500
+$Comp
+L Device:C C?
+U 1 1 5FB561C1
+P 2800 3750
+AR Path="/5FAC20F6/5FB561C1" Ref="C?"  Part="1" 
+AR Path="/5FAC4E12/5FB561C1" Ref="C7"  Part="1" 
+F 0 "C7" H 2915 3796 50  0000 L CNN
+F 1 "10nF" H 2915 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2838 3600 50  0001 C CNN
+F 3 "~" H 2800 3750 50  0001 C CNN
+	1    2800 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 3600 2800 3500
+Connection ~ 2800 3500
+Wire Wire Line
+	2800 3900 2800 4000
+Wire Wire Line
+	2800 3500 3250 3500
+Wire Wire Line
+	3400 3600 3250 3600
+Wire Wire Line
+	3250 3600 3250 3500
+Connection ~ 3250 3500
+Wire Wire Line
+	3250 3500 3400 3500
+Connection ~ 2800 4000
+Wire Wire Line
+	3400 3400 3150 3400
+Wire Wire Line
+	3150 3400 3150 3700
+Wire Wire Line
+	3150 4000 2800 4000
+Wire Wire Line
+	3400 3700 3150 3700
+Connection ~ 3150 3700
+Wire Wire Line
+	3150 3700 3150 4000
+$Comp
+L Device:L L?
+U 1 1 5FB5A8E8
+P 5050 3500
+AR Path="/5FAC20F6/5FB5A8E8" Ref="L?"  Part="1" 
+AR Path="/5FAC4E12/5FB5A8E8" Ref="L1"  Part="1" 
+F 0 "L1" V 5250 3500 50  0000 L CNN
+F 1 "2.2uH" V 5150 3450 50  0000 L CNN
+F 2 "Inductor_SMD:L_0603_1608Metric" H 5050 3500 50  0001 C CNN
+F 3 "~" H 5050 3500 50  0001 C CNN
+	1    5050 3500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9750 3550 9750 3700
+$Comp
+L Device:R R5
+U 1 1 5FB6200A
+P 5050 3200
+F 0 "R5" V 4850 3100 50  0000 L CNN
+F 1 "100k" V 4950 3100 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4980 3200 50  0001 C CNN
+F 3 "~" H 5050 3200 50  0001 C CNN
+	1    5050 3200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4600 3400 4700 3400
+Wire Wire Line
+	5200 3500 5350 3500
+Wire Wire Line
+	4900 3500 4600 3500
+Wire Wire Line
+	4600 3600 5350 3600
+Wire Wire Line
+	5350 3600 5350 3500
+Connection ~ 5350 3500
+$Comp
+L Device:R R6
+U 1 1 5FB64F0F
+P 5650 3750
+F 0 "R6" H 5720 3796 50  0000 L CNN
+F 1 "680k " H 5720 3705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5580 3750 50  0001 C CNN
+F 3 "~" H 5650 3750 50  0001 C CNN
+	1    5650 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3600 5650 3500
+Wire Wire Line
+	5650 3500 5350 3500
+Wire Wire Line
+	4600 3700 5350 3700
+Wire Wire Line
+	5350 3700 5350 4000
+Wire Wire Line
+	5350 4000 5650 4000
+Wire Wire Line
+	5650 4000 5650 3900
+$Comp
+L Device:R R7
+U 1 1 5FB68802
+P 6200 4000
+F 0 "R7" V 6400 3950 50  0000 L CNN
+F 1 "130k" V 6300 3900 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6130 4000 50  0001 C CNN
+F 3 "~" H 6200 4000 50  0001 C CNN
+	1    6200 4000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6800 3900 6800 4000
+$Comp
+L Device:C C?
+U 1 1 5FB6BE53
+P 6800 3750
+AR Path="/5FAC20F6/5FB6BE53" Ref="C?"  Part="1" 
+AR Path="/5FAC4E12/5FB6BE53" Ref="C8"  Part="1" 
+F 0 "C8" H 6915 3796 50  0000 L CNN
+F 1 "22nF" H 6915 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 6838 3600 50  0001 C CNN
+F 3 "~" H 6800 3750 50  0001 C CNN
+	1    6800 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4000 6800 4000
+Wire Wire Line
+	6050 4000 5650 4000
+Connection ~ 5650 4000
+Wire Wire Line
+	6800 3600 6800 3500
+Wire Wire Line
+	6800 3500 6250 3500
+Connection ~ 5650 3500
+Wire Wire Line
+	4000 4300 4000 4200
+$Comp
+L power:GND #PWR029
+U 1 1 5FB59ACF
+P 4000 4300
+F 0 "#PWR029" H 4000 4050 50  0001 C CNN
+F 1 "GND" H 4005 4127 50  0000 C CNN
+F 2 "" H 4000 4300 50  0001 C CNN
+F 3 "" H 4000 4300 50  0001 C CNN
+	1    4000 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 4000 2800 4300
+$Comp
+L Regulator_Linear:LD1117S33TR_SOT223 U2
+U 1 1 5FB88ADD
+P 7750 3500
+F 0 "U2" H 7750 3742 50  0000 C CNN
+F 1 "AP7313-33SRG-7" H 7750 3651 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 7750 3700 50  0001 C CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00000544.pdf" H 7850 3250 50  0001 C CNN
+	1    7750 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 3500 7300 3500
+Connection ~ 6800 3500
+Connection ~ 6800 4000
+Wire Wire Line
+	6800 4300 6800 4000
+$Comp
+L power:GND #PWR030
+U 1 1 5FB73A67
+P 6800 4300
+F 0 "#PWR030" H 6800 4050 50  0001 C CNN
+F 1 "GND" H 6805 4127 50  0000 C CNN
+F 2 "" H 6800 4300 50  0001 C CNN
+F 3 "" H 6800 4300 50  0001 C CNN
+	1    6800 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 4100 7750 4000
+$Comp
+L power:GND #PWR031
+U 1 1 5FB8FCC6
+P 7750 4100
+F 0 "#PWR031" H 7750 3850 50  0001 C CNN
+F 1 "GND" H 7755 3927 50  0000 C CNN
+F 2 "" H 7750 4100 50  0001 C CNN
+F 3 "" H 7750 4100 50  0001 C CNN
+	1    7750 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 3900 7300 4000
+$Comp
+L Device:C C?
+U 1 1 5FB914DD
+P 7300 3750
+AR Path="/5FAC20F6/5FB914DD" Ref="C?"  Part="1" 
+AR Path="/5FAC4E12/5FB914DD" Ref="C9"  Part="1" 
+F 0 "C9" H 7415 3796 50  0000 L CNN
+F 1 "1uF" H 7415 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7338 3600 50  0001 C CNN
+F 3 "~" H 7300 3750 50  0001 C CNN
+	1    7300 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8150 3900 8150 4000
+$Comp
+L Device:C C?
+U 1 1 5FB9246B
+P 8150 3750
+AR Path="/5FAC20F6/5FB9246B" Ref="C?"  Part="1" 
+AR Path="/5FAC4E12/5FB9246B" Ref="C10"  Part="1" 
+F 0 "C10" H 8265 3796 50  0000 L CNN
+F 1 "1uF" H 8265 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8188 3600 50  0001 C CNN
+F 3 "~" H 8150 3750 50  0001 C CNN
+	1    8150 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7300 3600 7300 3500
+Connection ~ 7300 3500
+Wire Wire Line
+	7300 3500 6800 3500
+Wire Wire Line
+	8150 3600 8150 3500
+Wire Wire Line
+	8150 3500 8050 3500
+Connection ~ 7750 4000
+Wire Wire Line
+	7750 4000 7750 3800
+Wire Wire Line
+	7300 4000 7750 4000
+Wire Wire Line
+	8150 4000 7750 4000
+Wire Wire Line
+	5200 3200 5350 3200
+Wire Wire Line
+	5350 3200 5350 3500
+Wire Wire Line
+	4900 3200 4700 3200
+Wire Wire Line
+	4700 3200 4700 3400
+Text HLabel 8550 3500 2    50   Output ~ 0
+VOUT_3V3
+Wire Wire Line
+	8550 3500 8150 3500
+Connection ~ 8150 3500
+Text HLabel 8550 3050 2    50   Output ~ 0
+VOUT_5V
+Wire Wire Line
+	8550 3050 6250 3050
+Wire Wire Line
+	6250 3050 6250 3500
+Connection ~ 6250 3500
+Wire Wire Line
+	6250 3500 5650 3500
+$EndSCHEMATC

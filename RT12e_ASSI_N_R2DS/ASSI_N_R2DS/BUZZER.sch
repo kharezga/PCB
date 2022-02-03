@@ -1,0 +1,132 @@
+EESchema Schematic File Version 4
+LIBS:ASSI_N_R2DS-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 8
+Title "ASSI+R2DS"
+Date "2020-11-12"
+Rev "00"
+Comp "PWR Racing Team"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 4500 3500 0    50   Input ~ 0
+DI_BUZZ
+Wire Wire Line
+	4500 3500 4750 3500
+$Comp
+L Transistor_BJT:2N3904 Q1
+U 1 1 5FB1F669
+P 5500 3500
+F 0 "Q1" H 5690 3546 50  0000 L CNN
+F 1 "2N3904" H 5690 3455 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5700 3425 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 5500 3500 50  0001 L CNN
+	1    5500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Buzzer BZ1
+U 1 1 5FB2057A
+P 12750 600
+F 0 "BZ1" H 12902 629 50  0000 L CNN
+F 1 "Buzzer" H 12902 538 50  0000 L CNN
+F 2 "" V 12725 700 50  0001 C CNN
+F 3 "~" V 12725 700 50  0001 C CNN
+	1    12750 600 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5FB20A96
+P 5600 2750
+F 0 "#PWR?" H 5600 2600 50  0001 C CNN
+F 1 "+5V" H 5615 2923 50  0000 C CNN
+F 2 "" H 5600 2750 50  0001 C CNN
+F 3 "" H 5600 2750 50  0001 C CNN
+	1    5600 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5FB221C3
+P 5600 3950
+F 0 "#PWR?" H 5600 3700 50  0001 C CNN
+F 1 "GND" H 5605 3777 50  0000 C CNN
+F 2 "" H 5600 3950 50  0001 C CNN
+F 3 "" H 5600 3950 50  0001 C CNN
+	1    5600 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 3950 5600 3700
+$Comp
+L Device:R R1
+U 1 1 5FB1E8FC
+P 4900 3500
+F 0 "R1" V 4693 3500 50  0000 C CNN
+F 1 "1k" V 4784 3500 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4830 3500 50  0001 C CNN
+F 3 "~" H 4900 3500 50  0001 C CNN
+	1    4900 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5FAF1E30
+P 5200 3800
+F 0 "R2" V 4993 3800 50  0000 C CNN
+F 1 "1k" V 5084 3800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5130 3800 50  0001 C CNN
+F 3 "~" H 5200 3800 50  0001 C CNN
+	1    5200 3800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5050 3500 5200 3500
+Wire Wire Line
+	5200 3650 5200 3500
+Connection ~ 5200 3500
+Wire Wire Line
+	5200 3500 5300 3500
+$Comp
+L power:GND #PWR?
+U 1 1 5FB31974
+P 5200 4000
+F 0 "#PWR?" H 5200 3750 50  0001 C CNN
+F 1 "GND" H 5205 3827 50  0000 C CNN
+F 2 "" H 5200 4000 50  0001 C CNN
+F 3 "" H 5200 4000 50  0001 C CNN
+	1    5200 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4000 5200 3950
+$Comp
+L Connector_Generic:Conn_01x02 J6
+U 1 1 5FB52EF2
+P 6300 2950
+F 0 "J6" H 6380 2942 50  0000 L CNN
+F 1 "Conn_01x02" H 6380 2851 50  0000 L CNN
+F 2 "Connector_Molex:Molex_MicroClasp_55932-0230_1x02_P2.00mm_Vertical" H 6300 2950 50  0001 C CNN
+F 3 "~" H 6300 2950 50  0001 C CNN
+	1    6300 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 2950 5600 2950
+Wire Wire Line
+	5600 2750 5600 2950
+Wire Wire Line
+	6100 3050 5600 3050
+Wire Wire Line
+	5600 3050 5600 3300
+Text Notes 5750 2950 0    50   ~ 0
+BUZZ+\n
+Text Notes 5750 3150 0    50   ~ 0
+BUZZ-\n
+$EndSCHEMATC

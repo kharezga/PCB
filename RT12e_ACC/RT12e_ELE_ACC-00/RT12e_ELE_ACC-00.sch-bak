@@ -1,0 +1,197 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x04 J1
+U 1 1 5FA9DBA9
+P 1250 2050
+F 0 "J1" H 1168 1625 50  0000 C CNN
+F 1 "5V_CAN" H 1168 1716 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x04_P2.00mm_Vertical" H 1250 2050 50  0001 C CNN
+F 3 "~" H 1250 2050 50  0001 C CNN
+	1    1250 2050
+	-1   0    0    1   
+$EndComp
+$Sheet
+S 2600 1750 1450 500 
+U 5FA9EA23
+F0 "POWER_SUPPLY" 50
+F1 "POWER_SUPPLY.sch" 50
+F2 "VIN" I L 2600 1850 50 
+$EndSheet
+Wire Wire Line
+	1450 1850 2600 1850
+$Comp
+L power:GND #PWR01
+U 1 1 5FAA0498
+P 2200 2000
+F 0 "#PWR01" H 2200 1750 50  0001 C CNN
+F 1 "GND" H 2205 1827 50  0000 C CNN
+F 2 "" H 2200 2000 50  0001 C CNN
+F 3 "" H 2200 2000 50  0001 C CNN
+	1    2200 2000
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 4750 2750 2100 2150
+U 5FAC1B11
+F0 "STM32" 50
+F1 "STM32.sch" 50
+F2 "SWCLK" I L 4750 4250 50 
+F3 "SWDIO" I L 4750 4150 50 
+F4 "SPI1_MOSI" B R 6850 3300 50 
+F5 "SPI1_MISO" I R 6850 3400 50 
+F6 "SPI1_SCK" O R 6850 3500 50 
+F7 "SPI1_CS" O R 6850 3600 50 
+F8 "DI_IAM_INT" I R 6850 3850 50 
+F9 "CAN_RX" I L 4750 3300 50 
+F10 "CAN_TX" O L 4750 3400 50 
+F11 "RESET" I L 4750 4850 50 
+F12 "STM_V+" O L 4750 4000 50 
+$EndSheet
+$Sheet
+S 7700 3150 1300 1100
+U 5FACFABC
+F0 "IAM-20680" 50
+F1 "IAM-20680.sch" 50
+F2 "INT" O L 7700 3850 50 
+F3 "SDI" B L 7700 3300 50 
+F4 "SPC" I L 7700 3500 50 
+F5 "SDO" O L 7700 3400 50 
+F6 "CS" I L 7700 3600 50 
+$EndSheet
+Wire Wire Line
+	2050 2150 2050 2950
+Wire Wire Line
+	2050 2950 2650 2950
+Wire Wire Line
+	1800 2050 1800 3100
+Wire Wire Line
+	1800 3100 2650 3100
+Wire Wire Line
+	3900 2950 4200 2950
+Wire Wire Line
+	3900 3100 4050 3100
+Wire Wire Line
+	6850 3300 7700 3300
+Wire Wire Line
+	6850 3400 7700 3400
+Wire Wire Line
+	6850 3500 7700 3500
+Wire Wire Line
+	6850 3600 7700 3600
+Wire Wire Line
+	6850 3850 7700 3850
+$Sheet
+S 2650 2750 1250 650 
+U 5FAC19F0
+F0 "CAN" 50
+F1 "CAN.sch" 50
+F2 "CAN_H" B L 2650 2950 50 
+F3 "CAN_L" B L 2650 3100 50 
+F4 "CAN_TX" O R 3900 2950 50 
+F5 "CAN_RX" I R 3900 3100 50 
+$EndSheet
+Wire Wire Line
+	1450 1950 2200 1950
+$Sheet
+S 3450 3900 900  650 
+U 5FB115FA
+F0 "SWD_connect.sch" 50
+F1 "SWD_connect.sch" 50
+F2 "SDWIO" I R 4350 4150 50 
+F3 "SWDCLK" I R 4350 4250 50 
+F4 "RESET" I R 4350 4350 50 
+F5 "STM_V+" I R 4350 4000 50 
+$EndSheet
+Wire Wire Line
+	4350 4150 4750 4150
+Wire Wire Line
+	4350 4250 4750 4250
+Wire Wire Line
+	4350 4350 4550 4350
+Wire Wire Line
+	4550 4350 4550 4850
+Wire Wire Line
+	4550 4850 4750 4850
+Wire Wire Line
+	2200 1950 2200 2000
+Wire Wire Line
+	4200 3400 4750 3400
+Wire Wire Line
+	4200 2950 4200 3400
+Wire Wire Line
+	4050 3100 4050 3300
+Wire Wire Line
+	4050 3300 4750 3300
+Text Label 1500 2150 0    50   ~ 0
+CAN+
+Text Label 1500 2050 0    50   ~ 0
+CAN-
+Wire Wire Line
+	1450 2050 1800 2050
+Wire Wire Line
+	1450 2150 2050 2150
+Text Label 1500 1950 0    50   ~ 0
+GND
+Text Label 1500 1850 0    50   ~ 0
+VIN
+Wire Wire Line
+	4750 4000 4350 4000
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5FF2EDB4
+P 1950 6100
+F 0 "H1" H 2050 6146 50  0000 L CNN
+F 1 "MountingHole" H 2050 6055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 1950 6100 50  0001 C CNN
+F 3 "~" H 1950 6100 50  0001 C CNN
+	1    1950 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5FF2F0B5
+P 1950 6300
+F 0 "H2" H 2050 6346 50  0000 L CNN
+F 1 "MountingHole" H 2050 6255 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 1950 6300 50  0001 C CNN
+F 3 "~" H 1950 6300 50  0001 C CNN
+	1    1950 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5FF2F795
+P 1950 6500
+F 0 "H3" H 2050 6546 50  0000 L CNN
+F 1 "MountingHole" H 2050 6455 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 1950 6500 50  0001 C CNN
+F 3 "~" H 1950 6500 50  0001 C CNN
+	1    1950 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5FF2FA1B
+P 1950 6700
+F 0 "H4" H 2050 6746 50  0000 L CNN
+F 1 "MountingHole" H 2050 6655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 1950 6700 50  0001 C CNN
+F 3 "~" H 1950 6700 50  0001 C CNN
+	1    1950 6700
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

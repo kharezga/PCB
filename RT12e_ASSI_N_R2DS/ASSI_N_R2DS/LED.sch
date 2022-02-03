@@ -1,0 +1,197 @@
+EESchema Schematic File Version 4
+LIBS:ASSI_N_R2DS-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 8
+Title "ASSI+R2DS"
+Date "2020-11-20"
+Rev "00"
+Comp "PWR Racing Team"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 6650 3350 1    50   Output ~ 0
+LED_MOSI
+Text HLabel 6650 5000 1    50   Output ~ 0
+LED_SCK
+Text HLabel 4750 3600 0    50   Input ~ 0
+MOSI
+Text HLabel 4700 5150 0    50   Input ~ 0
+SCK
+$Comp
+L SamacSys_Parts:74LV1T04GW-Q100H IC3
+U 1 1 5FAD268A
+P 5350 3500
+AR Path="/5FB2470E/5FAD268A" Ref="IC3"  Part="1" 
+AR Path="/5FB5B2EC/5FAD268A" Ref="IC?"  Part="1" 
+F 0 "IC3" H 5900 3765 50  0000 C CNN
+F 1 "74LV1T04GW-Q100H" H 5900 3674 50  0000 C CNN
+F 2 "SOT65P212X110-5N" H 6300 3600 50  0001 L CNN
+F 3 "" H 6300 3500 50  0001 L CNN
+F 4 "Translation - Voltage Levels 74LV1T04GW-Q100/SOT353/UMT5" H 6300 3400 50  0001 L CNN "Description"
+F 5 "1.1" H 6300 3300 50  0001 L CNN "Height"
+F 6 "771-74LV1T04GW-Q100H" H 6300 3200 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Nexperia/74LV1T04GW-Q100H?qs=W%2FMpXkg%252BdQ4uMOAh2KP3qg%3D%3D" H 6300 3100 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Nexperia" H 6300 3000 50  0001 L CNN "Manufacturer_Name"
+F 9 "74LV1T04GW-Q100H" H 6300 2900 50  0001 L CNN "Manufacturer_Part_Number"
+	1    5350 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L SamacSys_Parts:74LV1T04GW-Q100H IC4
+U 1 1 5FAD6072
+P 5350 5050
+AR Path="/5FB2470E/5FAD6072" Ref="IC4"  Part="1" 
+AR Path="/5FB5B2EC/5FAD6072" Ref="IC?"  Part="1" 
+F 0 "IC4" H 5900 5315 50  0000 C CNN
+F 1 "74LV1T04GW-Q100H" H 5900 5224 50  0000 C CNN
+F 2 "SOT65P212X110-5N" H 6300 5150 50  0001 L CNN
+F 3 "" H 6300 5050 50  0001 L CNN
+F 4 "Translation - Voltage Levels 74LV1T04GW-Q100/SOT353/UMT5" H 6300 4950 50  0001 L CNN "Description"
+F 5 "1.1" H 6300 4850 50  0001 L CNN "Height"
+F 6 "771-74LV1T04GW-Q100H" H 6300 4750 50  0001 L CNN "Mouser Part Number"
+F 7 "https://www.mouser.co.uk/ProductDetail/Nexperia/74LV1T04GW-Q100H?qs=W%2FMpXkg%252BdQ4uMOAh2KP3qg%3D%3D" H 6300 4650 50  0001 L CNN "Mouser Price/Stock"
+F 8 "Nexperia" H 6300 4550 50  0001 L CNN "Manufacturer_Name"
+F 9 "74LV1T04GW-Q100H" H 6300 4450 50  0001 L CNN "Manufacturer_Part_Number"
+	1    5350 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 5150 5250 5150
+Wire Wire Line
+	5200 3700 5200 3850
+Wire Wire Line
+	5350 5250 5200 5250
+Wire Wire Line
+	5350 3700 5200 3700
+Wire Wire Line
+	4750 3600 5200 3600
+$Comp
+L power:+5V #PWR039
+U 1 1 5FADA922
+P 6850 3050
+AR Path="/5FB2470E/5FADA922" Ref="#PWR039"  Part="1" 
+AR Path="/5FB5B2EC/5FADA922" Ref="#PWR?"  Part="1" 
+F 0 "#PWR039" H 6850 2900 50  0001 C CNN
+F 1 "+5V" H 6865 3223 50  0000 C CNN
+F 2 "" H 6850 3050 50  0001 C CNN
+F 3 "" H 6850 3050 50  0001 C CNN
+	1    6850 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 5050 6500 5050
+Wire Wire Line
+	6650 5050 6650 5000
+$Comp
+L power:+5V #PWR040
+U 1 1 5FADBEDD
+P 6850 4700
+AR Path="/5FB2470E/5FADBEDD" Ref="#PWR040"  Part="1" 
+AR Path="/5FB5B2EC/5FADBEDD" Ref="#PWR?"  Part="1" 
+F 0 "#PWR040" H 6850 4550 50  0001 C CNN
+F 1 "+5V" H 6865 4873 50  0000 C CNN
+F 2 "" H 6850 4700 50  0001 C CNN
+F 3 "" H 6850 4700 50  0001 C CNN
+	1    6850 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 5150 6850 5150
+Wire Wire Line
+	6850 4700 6850 5150
+Wire Wire Line
+	6450 3500 6650 3500
+Wire Wire Line
+	6650 3500 6650 3350
+Wire Wire Line
+	6450 3600 6850 3600
+Wire Wire Line
+	6850 3050 6850 3600
+$Comp
+L Device:Jumper JP1
+U 1 1 5FAF4EF6
+P 5850 2900
+AR Path="/5FB2470E/5FAF4EF6" Ref="JP1"  Part="1" 
+AR Path="/5FB5B2EC/5FAF4EF6" Ref="JP?"  Part="1" 
+F 0 "JP1" H 5850 3164 50  0000 C CNN
+F 1 "Jumper" H 5850 3073 50  0000 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 5850 2900 50  0001 C CNN
+F 3 "~" H 5850 2900 50  0001 C CNN
+	1    5850 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2900 5200 3600
+Connection ~ 5200 3600
+Wire Wire Line
+	5200 3600 5350 3600
+Wire Wire Line
+	6450 2900 6450 3500
+Connection ~ 6450 3500
+$Comp
+L Device:Jumper JP2
+U 1 1 5FB3D4CC
+P 5850 4450
+AR Path="/5FB2470E/5FB3D4CC" Ref="JP2"  Part="1" 
+AR Path="/5FB5B2EC/5FB3D4CC" Ref="JP?"  Part="1" 
+F 0 "JP2" H 5850 4714 50  0000 C CNN
+F 1 "Jumper" H 5850 4623 50  0000 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 5850 4450 50  0001 C CNN
+F 3 "~" H 5850 4450 50  0001 C CNN
+	1    5850 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 4450 5250 4450
+Wire Wire Line
+	6150 4450 6500 4450
+Wire Wire Line
+	5550 2900 5200 2900
+Wire Wire Line
+	6150 2900 6450 2900
+$Comp
+L power:GND #PWR037
+U 1 1 5FAD7139
+P 5200 3850
+AR Path="/5FB2470E/5FAD7139" Ref="#PWR037"  Part="1" 
+AR Path="/5FB5B2EC/5FAD7139" Ref="#PWR?"  Part="1" 
+F 0 "#PWR037" H 5200 3600 50  0001 C CNN
+F 1 "GND" H 5205 3677 50  0000 C CNN
+F 2 "" H 5200 3850 50  0001 C CNN
+F 3 "" H 5200 3850 50  0001 C CNN
+	1    5200 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 5250 5200 5500
+$Comp
+L power:GND #PWR038
+U 1 1 5FAD769A
+P 5200 5500
+AR Path="/5FB2470E/5FAD769A" Ref="#PWR038"  Part="1" 
+AR Path="/5FB5B2EC/5FAD769A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR038" H 5200 5250 50  0001 C CNN
+F 1 "GND" H 5205 5327 50  0000 C CNN
+F 2 "" H 5200 5500 50  0001 C CNN
+F 3 "" H 5200 5500 50  0001 C CNN
+	1    5200 5500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5350 3500
+NoConn ~ 5350 5050
+Wire Wire Line
+	6500 4450 6500 5050
+Connection ~ 6500 5050
+Wire Wire Line
+	6500 5050 6650 5050
+Wire Wire Line
+	5250 4450 5250 5150
+Connection ~ 5250 5150
+Wire Wire Line
+	5250 5150 4700 5150
+$EndSCHEMATC

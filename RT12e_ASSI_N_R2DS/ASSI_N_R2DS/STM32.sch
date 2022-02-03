@@ -1,0 +1,268 @@
+EESchema Schematic File Version 4
+LIBS:ASSI_N_R2DS-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 8
+Title "ASSI+R2DS"
+Date "2020-11-20"
+Rev "00"
+Comp "PWR Racing Team"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_ST_STM32F0:STM32F042K6Tx U1
+U 1 1 5FC2ECC6
+P 6000 3800
+F 0 "U1" H 6350 2850 50  0000 C CNN
+F 1 "STM32F042K6Tx" H 6350 2750 50  0000 C CNN
+F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 5600 2900 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00105814.pdf" H 6000 3800 50  0001 C CNN
+	1    6000 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR013
+U 1 1 5FC33677
+P 4600 2450
+F 0 "#PWR013" H 4600 2300 50  0001 C CNN
+F 1 "+3V3" H 4615 2623 50  0000 C CNN
+F 2 "" H 4600 2450 50  0001 C CNN
+F 3 "" H 4600 2450 50  0001 C CNN
+	1    4600 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5FC3367D
+P 4300 3100
+F 0 "R1" V 4500 3050 50  0000 L CNN
+F 1 "100" V 4400 3050 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4230 3100 50  0001 C CNN
+F 3 "~" H 4300 3100 50  0001 C CNN
+	1    4300 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5FC33683
+P 4600 3400
+F 0 "C1" H 4715 3446 50  0000 L CNN
+F 1 "100nF" H 4715 3355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4638 3250 50  0001 C CNN
+F 3 "~" H 4600 3400 50  0001 C CNN
+	1    4600 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5FC33689
+P 4600 2800
+F 0 "R2" H 4530 2754 50  0000 R CNN
+F 1 "10K" H 4530 2845 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4530 2800 50  0001 C CNN
+F 3 "~" H 4600 2800 50  0001 C CNN
+	1    4600 2800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4600 3250 4600 3100
+Wire Wire Line
+	4450 3100 4600 3100
+Connection ~ 4600 3100
+Wire Wire Line
+	4600 3100 4600 2950
+Text HLabel 3750 3100 0    50   Input ~ 0
+UC_RESET
+Wire Wire Line
+	4150 3100 3750 3100
+Wire Wire Line
+	4600 2650 4600 2450
+Wire Wire Line
+	4600 3550 4600 3750
+$Comp
+L power:GND #PWR014
+U 1 1 5FC33698
+P 4600 3750
+F 0 "#PWR014" H 4600 3500 50  0001 C CNN
+F 1 "GND" H 4605 3577 50  0000 C CNN
+F 2 "" H 4600 3750 50  0001 C CNN
+F 3 "" H 4600 3750 50  0001 C CNN
+	1    4600 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 3100 4600 3100
+Text HLabel 7100 3600 2    50   Input ~ 0
+SPI_SCK
+Wire Wire Line
+	6500 3600 7100 3600
+Text HLabel 7100 3800 2    50   Input ~ 0
+SPI_MOSI
+Wire Wire Line
+	7100 3800 6500 3800
+Text HLabel 7150 4200 2    50   Output ~ 0
+CAN_RX
+Text HLabel 7150 4300 2    50   Output ~ 0
+CAN_TX
+Wire Wire Line
+	7150 4200 6500 4200
+Wire Wire Line
+	7150 4300 6500 4300
+$Comp
+L Device:C C3
+U 1 1 5FC48CFB
+P 5250 2100
+F 0 "C3" H 5250 2000 50  0000 L CNN
+F 1 "100nF" H 5250 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5288 1950 50  0001 C CNN
+F 3 "~" H 5250 2100 50  0001 C CNN
+	1    5250 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5FC48D01
+P 5500 2100
+F 0 "C4" H 5500 2000 50  0000 L CNN
+F 1 "100nF" H 5500 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5538 1950 50  0001 C CNN
+F 3 "~" H 5500 2100 50  0001 C CNN
+	1    5500 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1950 5250 1850
+Wire Wire Line
+	5500 1950 5500 1850
+Wire Wire Line
+	5500 1850 5250 1850
+Connection ~ 5500 1850
+$Comp
+L power:+3V3 #PWR015
+U 1 1 5FC48D0B
+P 4950 1700
+F 0 "#PWR015" H 4950 1550 50  0001 C CNN
+F 1 "+3V3" H 4965 1873 50  0000 C CNN
+F 2 "" H 4950 1700 50  0001 C CNN
+F 3 "" H 4950 1700 50  0001 C CNN
+	1    4950 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5FC48D11
+P 4950 2100
+F 0 "C2" H 4950 2000 50  0000 L CNN
+F 1 "100nF" H 4950 1900 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4988 1950 50  0001 C CNN
+F 3 "~" H 4950 2100 50  0001 C CNN
+	1    4950 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 1700 4950 1850
+Wire Wire Line
+	5250 1850 4950 1850
+Connection ~ 5250 1850
+Connection ~ 4950 1850
+Wire Wire Line
+	4950 1850 4950 1950
+$Comp
+L power:GND #PWR016
+U 1 1 5FC48D1D
+P 4950 2400
+F 0 "#PWR016" H 4950 2150 50  0001 C CNN
+F 1 "GND" H 4955 2227 50  0000 C CNN
+F 2 "" H 4950 2400 50  0001 C CNN
+F 3 "" H 4950 2400 50  0001 C CNN
+	1    4950 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2400 4950 2250
+Wire Wire Line
+	5500 2400 5500 2250
+Wire Wire Line
+	5250 2400 5250 2250
+$Comp
+L power:GND #PWR018
+U 1 1 5FC48D26
+P 5500 2400
+F 0 "#PWR018" H 5500 2150 50  0001 C CNN
+F 1 "GND" H 5505 2227 50  0000 C CNN
+F 2 "" H 5500 2400 50  0001 C CNN
+F 3 "" H 5500 2400 50  0001 C CNN
+	1    5500 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 5FC48D2C
+P 5250 2400
+F 0 "#PWR017" H 5250 2150 50  0001 C CNN
+F 1 "GND" H 5255 2227 50  0000 C CNN
+F 2 "" H 5250 2400 50  0001 C CNN
+F 3 "" H 5250 2400 50  0001 C CNN
+	1    5250 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2900 5900 1850
+Wire Wire Line
+	5500 1850 5900 1850
+Wire Wire Line
+	6000 2900 5900 2900
+Connection ~ 5900 2900
+Wire Wire Line
+	6100 2900 6000 2900
+Connection ~ 6000 2900
+Text HLabel 7150 4400 2    50   Output ~ 0
+SWDIO
+Text HLabel 7150 4500 2    50   Output ~ 0
+SWCLK
+Wire Wire Line
+	7150 4400 6500 4400
+Wire Wire Line
+	7150 4500 6500 4500
+Wire Wire Line
+	6000 4800 6000 4900
+Wire Wire Line
+	5900 4800 5900 4900
+Wire Wire Line
+	5900 4900 6000 4900
+Connection ~ 6000 4900
+Wire Wire Line
+	6000 4900 6000 4950
+$Comp
+L power:GND #PWR019
+U 1 1 5FC57646
+P 6000 4950
+F 0 "#PWR019" H 6000 4700 50  0001 C CNN
+F 1 "GND" H 6005 4777 50  0000 C CNN
+F 2 "" H 6000 4950 50  0001 C CNN
+F 3 "" H 6000 4950 50  0001 C CNN
+	1    6000 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 3200 6500 3200
+Wire Wire Line
+	7100 3300 6500 3300
+Text HLabel 7100 3300 2    50   Output ~ 0
+AMP_VOLUME
+Text HLabel 7100 3200 2    50   Output ~ 0
+AMP_SYSTEM_CONTORL
+Text HLabel 7150 4000 2    50   Output ~ 0
+AMP_L_CHANNEL
+Text HLabel 7150 3900 2    50   Output ~ 0
+AMP_R_CHANNEL
+Wire Wire Line
+	7150 3900 6500 3900
+Wire Wire Line
+	7150 4000 6500 4000
+$EndSCHEMATC
